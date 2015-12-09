@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preferences</title>
+</head>
+<body>
+<style>
+    body {
+        background-color: #000000;
+    }
+
+    h1 {
+        background-color: #00ff00;
+        font-family: Helvetica;
+    }
+</style>
+Prefs
+<script>
+    var ipc = require('ipc')
+
+    var button = document.createElement('button')
+    button.textContent = 'Hide'
+    button.addEventListener('click', function(){
+        ipc.send('toggle-prefs')
+    })
+    document.body.appendChild(button)
+</script>
+</body>
+</html>
